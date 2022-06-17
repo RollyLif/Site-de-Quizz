@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap');
+
+body{
+    
+    background: linear-gradient(90deg, #55ffb5, #71bbcb);
+}
+
+main{
+    font-family: 'Inter';
+    font-style: normal;
+    text-align: center;
+    color: #555555;
+    margin : auto;
+    background-color: #fff;
+    width: 571px;
+    height: 784px;
+    padding-top: 88px;
+}
+
+section
+{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 24px;
+}
+h1
+{
+    
+    font-size: 32px;
+    margin-bottom: 68px;
+}
+
+.question
+{
+    font-size: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 65px;
+}
+
+.erreur{
+    font-size: 12px;
+    color:#FF3838;
+    margin-top: 6px;
+}
+
+label{
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+input{
+    height: 59px;
+    margin-bottom : 6px;
+}
+
+button{
+    width: 226px;
+    height: 59px;
+    color: #fff;
+    font-size: 22px;
+    background-color: #028A3D;
+    border : none;
+}
+
+h2{
+    font-size: 20px;
+    margin-bottom: 31px;
+}
+.entete_question
+{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.titre
+{
+    display: flex;
+    flex-direction: column;
+}
+
+progress{
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 52px;
+    width: 491px;
+    height: 10px;
+    background-color: #009738;
+    border : 1px solid #DDDDDD;
+    border-radius: 10px;
+}
+
+.assertion{
+    margin: 36px 40px;
+    height: 59px;
+    display: flex;
+    align-items: baseline;
+    border : 1px solid #DDDDDD;
+}
+
+input[type='radio'], span>label{ 
+    padding:5px;
+    margin: 5px;
+    vertical-align: middle;
+}
+
+.validation{
+    display:flex;
+    justify-content: space-between;
+    margin: 50px 40px;
+}
+.email_resultat{
+    font-size: 20px;
+    margin-bottom: 52px;
+}
+
+img{
+    width: 571px;
+    height: 784px;
+}
+
+#suivant{
+    background-color: rgba(2, 138, 61, 0.42);
+}
+
+#quitter{
+    background-color: #EC880C;
+}
+
+#acceuil{
+    background-color: #0880D6;
+}
