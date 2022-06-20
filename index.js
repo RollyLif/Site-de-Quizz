@@ -1,5 +1,4 @@
-function refreshProgress(){
-    let progressBar=document.querySelector('progress');
-    let valeur=ProgressBar.getValue();
-    progressBar.setAttribute('value',valeur--);
-}
+let nom=document.querySelector('input');
+nom.addEventListener('change', function(){
+    alert(nom.value());
+});
