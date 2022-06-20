@@ -67,6 +67,7 @@ button{
     font-size: 22px;
     background-color: #028A3D;
     border : none;
+    cursor: pointer;
 }
 
 h2{
@@ -104,12 +105,14 @@ progress{
     display: flex;
     align-items: baseline;
     border : 1px solid #DDDDDD;
+    cursor: pointer;
 }
 
 input[type='radio'], span>label{ 
     padding:5px;
     margin: 5px;
     vertical-align: middle;
+    cursor: pointer;
 }
 
 .validation{
