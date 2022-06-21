@@ -15,4 +15,8 @@ bouton.onclick = function(){
         document.querySelector('.email_erreur').style.display = 'block';
     }
 
+    if(exp.test(nom)&&exp1.test(email)){
+        window.open("Questionnaire.html", "_self");
+    }
+
 };
