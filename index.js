@@ -1,24 +1,34 @@
-let bouton=document.querySelector('#Commencer');
-bouton.onclick = function(){
-    let nom = document.getElementById('nom').value;
-    let email = document.getElementById('email').value;
-    let exp= new RegExp("^\\w{2,}$");
-    let exp1=new RegExp("^[a-zA-Z]([a-zA-Z0-9._-]{2,})@([a-z0-9._-]{3,})\.([a-z]{2,})$");
-    if(exp.test(nom)){
-        document.querySelector('.nom_erreur').style.display = 'none';
-    }else{
-        document.querySelector('.nom_erreur').style.display = 'block';
-    }
-    if(exp1.test(email)){
-        document.querySelector('.email_erreur').style.display = 'none';
-    }else{
-        document.querySelector('.email_erreur').style.display = 'block';
-    }
+let monNom="";
+let mail="";
 
-    if(exp.test(nom)&&exp1.test(email)){
-        window.open("Questionnaire.html", "_self");
-    }
-};
+let bouton=document.querySelector('#Commencer');
+if(bouton){
+    bouton.onclick = function(){
+        let nom = document.getElementById('nom').value;
+        let email = document.getElementById('email').value;
+        let exp= new RegExp("^\\w{2,}$");
+        let exp1=new RegExp("^[a-zA-Z]([a-zA-Z0-9._-]{2,})@([a-z0-9._-]{3,})\.([a-z]{2,})$");
+        if(exp.test(nom)){
+            document.querySelector('.nom_erreur').style.display = 'none';
+        }else{
+            document.querySelector('.nom_erreur').style.display = 'block';
+        }
+        if(exp1.test(email)){
+            document.querySelector('.email_erreur').style.display = 'none';
+        }else{
+            document.querySelector('.email_erreur').style.display = 'block';
+        }
+    
+        if(exp.test(nom)&&exp1.test(email)){
+            localStorage.setItem("nom",nom);
+            localStorage.setItem("email", email);
+            
+            window.open("Questionnaire.html", "_self");
+        }
+    };
+}
+
+
 
 const questions = [
     {
@@ -96,4 +106,31 @@ const questions = [
         choix: ['XMLparseRequest','XMLHttpRequest','mysql_db_query','http_get_request'],
         reponse :"XMLHttpRequest"
     }
-]
+];
+
+function resultat() {
+    window.open("resultat.html", "_self");  
+}
+
+let quitter = document.querySelector('#quitter');
+if(quitter){
+    quitter.onclick=function(){
+        resultat();
+    };
+}
+
+let acceuil =document.querySelector('#acceuil');
+if(acceuil){
+    acceuil.onclick = function () {
+        window.open("home.html", "_self");  
+    }
+}
+
+let nom_resultat = document.querySelector('.titre_nom');
+if(nom_resultat){
+    nom_resultat.textContent = localStorage.getItem("nom");
+}
+let email_resultat =document.querySelector('.titre_email');
+if(email_resultat){
+    email_resultat.textContent = localStorage.getItem("email");
+}
