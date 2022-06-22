@@ -19,7 +19,7 @@ if(bouton){
             document.querySelector('.email_erreur').style.display = 'block';
         }
     
-        if(exp.test(nom)&&exp1.test(email)){
+        if(exp.test(nom) && exp1.test(email)){
             localStorage.setItem("nom",nom);
             localStorage.setItem("email", email);
             
