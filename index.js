@@ -1,5 +1,5 @@
-let monNom="";
-let mail="";
+let score=0;
+let choix=-1;
 
 let bouton=document.querySelector('#Commencer');
 if(bouton){
@@ -28,7 +28,15 @@ if(bouton){
     };
 }
 
+function cocher() {
+    let assertions = document.querySelectorAll('.answer');
+    assertions.forEach((i)=> 
+        i.addEventListener("input", (e) => {
+            choix = e.target.id;
+        }));
+}
 
+cocher();
 
 const questions = [
     {
@@ -143,24 +151,34 @@ function afficheFonction(index) {
     const assertion4 = document.querySelector('#assertion4');
     const numero = document.querySelector('.numero_question');
 
-    enonce_label.textContent = questions[index].Question;
-    assertion1.textContent = questions[index].choix[0];
-    assertion2.textContent = questions[index].choix[1];
-    assertion3.textContent = questions[index].choix[2];
-    assertion4.textContent = questions[index].choix[3];
-    numero.textContent = 'Question '+(index+1)+'/15';
+    if(enonce_label && assertion1 && assertion2 && assertion3 && assertion4 && numero){
+        enonce_label.textContent = questions[index].Question;
+        assertion1.textContent = questions[index].choix[0];
+        assertion2.textContent = questions[index].choix[1];
+        assertion3.textContent = questions[index].choix[2];
+        assertion4.textContent = questions[index].choix[3];
+        numero.textContent = 'Question '+(index+1)+'/15';
+    }
 }
 
-let compteur=0;
+let compteur=14;
 afficheFonction(compteur);
 
 const suivent = document.querySelector('#Suivant');
-suivent.addEventListener('click', () => {
-    if( compteur<=15 ){
-        compteur++;
-        afficheFonction(compteur);
-    }else{
-        window.open("resultat.html", "_self");  
-    }
+if(suivent){
+    suivent.addEventListener('click', () => {
+        if( compteur< 14 ){
+            if(questions[compteur].reponse == questions[compteur].choix[(choix-1)]){
+                score++;
+                console.log(score);
+            }
+            compteur++;
+            afficheFonction(compteur);
+        }else{
+            window.open("resultat.html", "_self");  
+        }
+    
+    });
+}
 
-});
+
