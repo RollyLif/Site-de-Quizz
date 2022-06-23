@@ -22,6 +22,7 @@ if(bouton){
         if(exp.test(nom) && exp1.test(email)){
             localStorage.setItem("nom",nom);
             localStorage.setItem("email", email);
+            localStorage.setItem("score", 0);
             
             window.open("Questionnaire.html", "_self");
         }
@@ -117,6 +118,7 @@ const questions = [
 ];
 
 function resultat() {
+    localStorage.setItem("score", score);
     window.open("resultat.html", "_self");  
 }
 
@@ -161,7 +163,7 @@ function afficheFonction(index) {
     }
 }
 
-let compteur=14;
+let compteur=0;
 afficheFonction(compteur);
 
 const suivent = document.querySelector('#Suivant');
@@ -170,15 +172,31 @@ if(suivent){
         if( compteur< 14 ){
             if(questions[compteur].reponse == questions[compteur].choix[(choix-1)]){
                 score++;
-                console.log(score);
             }
+            localStorage.setItem("score", score);
             compteur++;
             afficheFonction(compteur);
         }else{
-            window.open("resultat.html", "_self");  
+            resultat();  
         }
     
     });
 }
 
+const reussite = document.querySelector('#reussite');
+const echec = document.querySelector('#echec');
 
+ if(reussite && echec){
+    let score_final = localStorage.getItem("score");
+            if(score_final<8){
+            reussite.style.display = 'none';
+            echec.style.display = 'block';
+        }else{
+            reussite.style.display = 'block';
+            echec.style.display = 'none';
+        }
+    let label_resultat = document.querySelector('.score_final');
+        if(score_final){
+            label_resultat.textContent = score_final +"/15";
+        }
+ }
