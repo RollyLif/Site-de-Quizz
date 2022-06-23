@@ -1,5 +1,6 @@
 let score=0;
 let choix=-1;
+let chrono=60;
 
 let bouton=document.querySelector('#Commencer');
 if(bouton){
@@ -167,19 +168,26 @@ let compteur=0;
 afficheFonction(compteur);
 
 const suivent = document.querySelector('#Suivant');
+
+function repondre(){
+
+    if( compteur< 14 ){
+        if(questions[compteur].reponse == questions[compteur].choix[(choix-1)]){
+            score++;
+        }
+        localStorage.setItem("score", score);
+        compteur++;
+        afficheFonction(compteur);
+        chrono = 60;
+    }else{
+        resultat();  
+    }
+
+}
+
 if(suivent){
     suivent.addEventListener('click', () => {
-        if( compteur< 14 ){
-            if(questions[compteur].reponse == questions[compteur].choix[(choix-1)]){
-                score++;
-            }
-            localStorage.setItem("score", score);
-            compteur++;
-            afficheFonction(compteur);
-        }else{
-            resultat();  
-        }
-    
+     repondre();   
     });
 }
 
@@ -200,3 +208,18 @@ const echec = document.querySelector('#echec');
             label_resultat.textContent = score_final +"/15";
         }
  }
+
+ const progress = document.querySelector('#minuteur');
+ const min = document.querySelector('.minuteur');
+ setInterval(() => {
+        if(chrono>-1){
+            if(min && progress ){
+                min.textContent = chrono;
+                progress.value = chrono;
+            }   
+        }else{
+            repondre(); 
+        }
+        chrono--;
+   
+}, 1000);
