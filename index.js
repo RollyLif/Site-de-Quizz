@@ -134,3 +134,33 @@ let email_resultat =document.querySelector('.titre_email');
 if(email_resultat){
     email_resultat.textContent = localStorage.getItem("email");
 }
+
+function afficheFonction(index) {
+    const enonce_label= document.querySelector('#enonce_question');
+    const assertion1 = document.querySelector('#assertion1');
+    const assertion2 = document.querySelector('#assertion2');
+    const assertion3 = document.querySelector('#assertion3');
+    const assertion4 = document.querySelector('#assertion4');
+    const numero = document.querySelector('.numero_question');
+
+    enonce_label.textContent = questions[index].Question;
+    assertion1.textContent = questions[index].choix[0];
+    assertion2.textContent = questions[index].choix[1];
+    assertion3.textContent = questions[index].choix[2];
+    assertion4.textContent = questions[index].choix[3];
+    numero.textContent = 'Question '+(index+1)+'/15';
+}
+let compteur=0;
+afficheFonction(compteur);
+
+const suivent = document.querySelector('#Suivant');
+suivent.addEventListener('click', () => {
+    questions[compteur].reponse ==
+    if(compteur<15){
+        compteur++;
+        afficheFonction(compteur);
+    }else{
+        window.open("resultat.html", "_self");  
+    }
+
+});
