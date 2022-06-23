@@ -150,13 +150,13 @@ function afficheFonction(index) {
     assertion4.textContent = questions[index].choix[3];
     numero.textContent = 'Question '+(index+1)+'/15';
 }
+
 let compteur=0;
 afficheFonction(compteur);
 
 const suivent = document.querySelector('#Suivant');
 suivent.addEventListener('click', () => {
-    questions[compteur].reponse ==
-    if(compteur<15){
+    if( compteur<=15 ){
         compteur++;
         afficheFonction(compteur);
     }else{
