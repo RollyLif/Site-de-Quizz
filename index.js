@@ -35,6 +35,7 @@ function cocher() {
     assertions.forEach((i)=> 
         i.addEventListener("input", (e) => {
             choix = e.target.id;
+            reactiverBouton();
         }));
 }
 
@@ -161,6 +162,8 @@ function afficheFonction(index) {
         assertion3.textContent = questions[index].choix[2];
         assertion4.textContent = questions[index].choix[3];
         numero.textContent = 'Question '+(index+1)+'/15';
+        deselectionner();
+        desactiveBouton();
     }
 }
 
@@ -223,3 +226,15 @@ const echec = document.querySelector('#echec');
         chrono--;
    
 }, 1000);
+
+function deselectionner(){
+    for(let i=1;i<5;i++){
+        document.getElementById(i).checked=false;
+    }
+}
+function desactiveBouton(){
+    document.getElementById("Suivant").disabled=true;
+}
+function reactiverBouton(){
+    document.getElementById("Suivant").disabled=false;
+}
