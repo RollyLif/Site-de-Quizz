@@ -90,10 +90,9 @@ h2{
 }
 
 progress{
-    margin-left: 40px;
-    margin-right: 40px;
+    margin: auto;
     margin-bottom: 52px;
-    width: 491px;
+    width: 85%;
     height: 10px;
     background-color: #009738;
     border : 1px solid #DDDDDD;
@@ -150,13 +149,16 @@ img{
     }
 
     progress{
-        margin-left: 40px;
-        margin-right: 40px;
-        margin-bottom: 52px;
-        width: 90%;
+        width: 90vw;
         height: 10px;
         background-color: #009738;
         border : 1px solid #DDDDDD;
         border-radius: 10px;
+        margin-bottom: 30px;
+    }
+
+    label{
+        text-align: left;
+        font-size: 12px;
     }
 }
