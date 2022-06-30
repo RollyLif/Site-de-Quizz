@@ -142,3 +142,10 @@ img{
 #acceuil{
     background-color: #0880D6;
 }
+
+@media only screen and (max-width: 600px) {
+    main{
+        width: 100%;
+        margin : 0px;
+    }
+}
