@@ -11,13 +11,17 @@ if(bouton){
         let exp1=new RegExp("^[a-zA-Z]([a-zA-Z0-9._-]{2,})@([a-z0-9._-]{3,})\.([a-z]{2,})$");
         if(exp.test(nom)){
             document.querySelector('.nom_erreur').style.display = 'none';
+            document.getElementById('nom').style.border = '2px solid black';
         }else{
             document.querySelector('.nom_erreur').style.display = 'block';
+            document.getElementById('nom').style.border = '2px solid #FF3838';
         }
         if(exp1.test(email)){
             document.querySelector('.email_erreur').style.display = 'none';
+            document.getElementById('email').style.border = '2px solid black';
         }else{
             document.querySelector('.email_erreur').style.display = 'block';
+            document.getElementById('email').style.border = '2px solid #FF3838';
         }
     
         if(exp.test(nom) && exp1.test(email)){
@@ -134,7 +138,7 @@ if(quitter){
 let acceuil =document.querySelector('#acceuil');
 if(acceuil){
     acceuil.onclick = function () {
-        window.open("home.html", "_self");  
+        window.open("index.html", "_self");  
     }
 }
 
