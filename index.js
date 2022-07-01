@@ -7,8 +7,8 @@ if(bouton){
     bouton.onclick = function(){
         let nom = document.getElementById('nom').value;
         let email = document.getElementById('email').value;
-        let exp= new RegExp("^[a-zA-Zéèêëçàîïô_-]{2,}$");
-        let exp1=new RegExp("^[a-zA-Z]([a-zA-Z0-9._-]{2,})@([a-z0-9._-]{3,})\.([a-z]{2,})$");
+        let exp= new RegExp("^[a-zA-ZÀ-ž_-]{2,}$");
+        let exp1=new RegExp("^[a-zA-ZÀ-ž]([a-zA-ZÀ-ž0-9._-]{2,})@([a-z0-9._-]{3,})\.([a-z]{2,})$");
         if(exp.test(nom)){
             document.querySelector('.nom_erreur').style.display = 'none';
             document.getElementById('nom').style.border = '2px solid black';

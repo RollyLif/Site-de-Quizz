@@ -101,11 +101,14 @@ progress{
 
 .assertion{
     margin: 36px 40px;
-    height: 59px;
     display: flex;
     align-items: baseline;
     border : 1px solid #DDDDDD;
     cursor: pointer;
+}
+
+.assertion:hover {
+    border: 2px solid #028A3D;
 }
 
 input[type='radio'], span>label{ 
