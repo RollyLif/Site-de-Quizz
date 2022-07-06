@@ -190,6 +190,10 @@ function repondre(){
         resultat();  
     }
 
+    if(compteur == 14){
+        suivent.textContent = "Terminer";
+    }
+
 }
 
 if(suivent){
