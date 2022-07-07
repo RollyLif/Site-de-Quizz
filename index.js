@@ -171,7 +171,7 @@ function afficheFonction(index) {
     }
 }
 
-let compteur=0;
+let compteur=13;
 afficheFonction(compteur);
 
 const suivent = document.querySelector('#Suivant');
@@ -187,6 +187,10 @@ function repondre(){
         afficheFonction(compteur);
         chrono = 60;
     }else{
+        if(questions[compteur].reponse == questions[compteur].choix[(choix-1)]){
+            score++;
+        }
+        localStorage.setItem("score", score);
         resultat();  
     }
 
